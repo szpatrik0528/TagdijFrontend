@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hu">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,59 +13,82 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
             integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
         <script src="tagdij.js"></script>
-        <title>Ügyfelek nyilvántartása</title>
+        <title>Tagdij Frontend</title>
     </head>
+
     <body>
         <div class="container">
-            <h1>Ügyfelek nyilvántartása</h1>
-            <form action="#" method="post" class="row">
-                <fieldset>
-                    <legend>Aktuális felhasználó</legend>
-                    <div class="row">
-                        <div class="mb-3 col-3">
-                            <label for="azon"
-                                class="form-label">Azonosító</label>
-                            <input type="text" name="azon" id="azon"
-                                class="form-control" readonly required>
-                        </div>
-                        <div class="mb-3 col-9">
-                            <label for="nev" class="form-label">Név</label>
-                            <input type="text" name="nev" id="azon"
-                                class="form-control" >
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="mb-3 col-4">
-                            <label for="szulev"
-                                class="form-label">Születési Év</label>
-                            <input type="number" min="1900" max="2099" step="1" name="szulev" id="szulev"
-                                class="form-control">
-                        </div>
-                        <div class="mb-3 col-4">
-                            <label for="irszam" class="form-label">Irányítószám</label>
-                            <input type="number" name="irszam" id="irszam"
-                                class="form-control">
-                        </div>
-                        <div class="mb-3 col-4">
-                            <label for="orsz"
-                                class="form-label">Ország</label>
-                            <input type="text" name="orsz" id="orsz"
-                                class="form-control">
-                        </div>
-                    </div>
-                </fieldset>
-                <div class="d-flex flex justify-content-around">
-                    <button type="button" class="btn btn-primary" id="create">Create</button>
-                    <button type="button" class="btn btn-secondary" id="read">Read</button>
-                    <button type="button" class="btn btn-info" id="update">Update</button>
-                    <button type="button" class="btn btn-danger" id="delete">Delete</button>
-                </div>
-            </form>
-            <div class="ugyfellista">
 
+            <div class="col-md-6 mx-auto">
+                <form id="myForm" action="#" method="post">
+                    <fieldset>
+                        <legend>
+                            <center>
+                                <h1>Tagdij</h1>
+                            </center>
+                        </legend>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 mb-3">
+                                <div class="form-group">
+                                    <label for="tag">Azonosító:</label>
+                                    <input type="text" id="azon" name="azon"
+                                        class="form-control" id="tag" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group">
+                                    <label for="tag">Név:</label>
+                                    <input type="text" id="nev" name="nev"
+                                        class="form-control" id="tag" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-4 mb-3">
+                                <div class="form-group">
+                                    <label for="tag">Születési idő:</label>
+                                    <input type="number" minlength="4"
+                                        min="1930" maxlength="4" id="szulev"
+                                        name="szulev"
+                                        class="form-control" id="tag" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="form-group">
+                                    <label for="tag">Irányítószám:</label>
+                                    <input type="number" maxlength="4"
+                                        minlength="4" id="irszam" name="irszam"
+                                        class="form-control" id="tag" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="form-group">
+                                    <label for="tag">Ország:</label>
+                                    <input type="text" maxlength="2"
+                                        minlength="1" id="orsz" name="orsz"
+                                        class="form-control" id="tag" required>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div
+                        class="d-flex justify-content-around d-flex flex-column">
+                        <button type="button" class="btn btn-secondary mb-3"
+                            id="read" name="read">Read</button>
+                        <button type="button" class="btn btn-success mb-3"
+                            id="create" name="create">Create</button>
+                        <button type="button" class="btn btn-primary mb-3"
+                            id="update" name="update">Update</button>
+                        <button type="button" class="btn btn-danger mb-3"
+                            id="delete" name="delete">Delete</button>
+                    </div>
+                </form>
+                <div id="ugyfellista">
+
+                </div>
             </div>
-        </div>
-    </body>
-</html>
+        </body>
+    </html>
